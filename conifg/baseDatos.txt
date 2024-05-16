@@ -1,0 +1,50 @@
+CREATE DATABASE elecciones_db;
+USE elecciones_db;
+
+CREATE TABLE roles(
+	id_rol INT PRIMARY KEY AUTO_INCREMENT,
+	nombre_rol VARCHAR (30)
+);
+
+CREATE TABLE usuarios(
+	id_usuario INT PRIMARY KEY AUTO_INCREMENT,
+	documento_usuario VARCHAR(11) UNIQUE,
+	id_rol INT,
+	FOREIGN KEY (id_rol) REFERENCES roles(id_rol)
+);
+
+
+CREATE TABLE candidatos(
+	id_candidato INT PRIMARY KEY AUTO_INCREMENT,
+	nombre_candidato VARCHAR(100),
+	frase_candidato TEXT
+);
+
+CREATE TABLE fotos_candidatos(
+	id_imagen INT PRIMARY KEY AUTO_INCREMENT,
+	id_candidato INT,
+	ruta_imagen TEXT,
+	FOREIGN KEY(id_candidato) REFERENCES candidatos(id_candidato)
+);
+
+CREATE TABLE elecciones(
+	id_eleccion INT PRIMARY KEY AUTO_INCREMENT,
+	nombre_eleccion VARCHAR(50)
+);
+
+CREATE TABLE fotos_elecciones(
+	id_imagen INT PRIMARY KEY AUTO_INCREMENT,
+	id_eleccion INT,
+	ruta_imagen TEXT,
+	FOREIGN KEY(id_eleccion) REFERENCES elecciones(id_eleccion)
+);
+
+CREATE TABLE votos(
+	id_voto INT PRIMARY KEY AUTO_INCREMENT,
+	id_usuario INT,
+	id_candidato INT,
+	id_eleccion INT,
+	FOREIGN KEY(id_candidato) REFERENCES candidatos(id_candidato),
+	FOREIGN KEY(id_usuario) REFERENCES usuarios(id_usuario),
+	FOREIGN KEY(id_eleccion) REFERENCES elecciones(id_eleccion)
+);
