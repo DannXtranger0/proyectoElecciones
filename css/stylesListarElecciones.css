@@ -37,8 +37,10 @@ body{
 
 
 footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 100%;
-    text-align: center;
     position: fixed;
     height: 9vh;
     bottom: 0%;
