@@ -23,6 +23,7 @@ body{
 }
 
 .container h1{
+    font-size: 3em;
     margin: 80px 0px;
 }
 
@@ -30,9 +31,12 @@ body{
     margin-top: -20px;
 }
 
+.login p{
+    font-size: 1.5em;
+}
 .container .campo{
-    width: 200px;
-    height: 25px;
+    width: 250px;
+    height: 30px;
     border-radius: 5px;
     text-align: center;
     font-size: 1em;
@@ -41,8 +45,9 @@ body{
 }
 
 .container .boton{
+    height: 30px;
     font-weight: bold;
-    width: 200px;
+    width: 250px;
     margin: 20px 0px;
     border-radius: 5px;
     border: none;
@@ -56,11 +61,20 @@ body{
  
 
 footer{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: center;
     margin-top: 15px;
     background-color: #4E5967;
     padding: 10px 0px;
+    position: fixed;
+    width: 100%;
+    bottom: 0%;
+    height: 9vh;
+    
 }
 footer p{
-    margin: 0;
-    padding: 0 20px;
+padding-left: 30px;
+  
 }

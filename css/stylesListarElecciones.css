@@ -15,6 +15,7 @@ body{
 }
 
 .contenedor h1{
+    font-size: 3em;
     color: white;
     margin-top: 30px;
 }
@@ -37,6 +38,7 @@ body{
 
 
 footer{
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -50,7 +52,7 @@ footer{
 
 footer a{
     padding: 10px 30px;
-    background-color: #7C638C;
+    background-color: #35707C;
     border-radius: 10px;
     color: white;
     text-decoration: none;
